@@ -53,6 +53,19 @@ go run main.go
 If you still have doubts or questions please refere to the documentation on BindataFS:
 https://doc.getqor.com/plugins/bindata.html
 
+Additionally if you are having issues with the resources showing up correctly you might consider looking in the following places:
+
+deploy.sh
+gulpfile.babel.js
+
+and make sure you have the nodemodules and gulp installed if you want to make any changes on the front end:
+Requires Node.js and Gulp for building frontend files
+
+npm install && npm install -g gulp
+
+    Watch SCSS/JavaScript changes: gulp
+
+
 ## Admin Management Interface
 
 [Qor Example admin configuration](https://github.com/qor/qor-example/blob/master/config/admin/admin.go)
