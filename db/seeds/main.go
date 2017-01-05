@@ -51,7 +51,7 @@ var (
 		&models.Store{},
 		&models.Order{}, &models.OrderItem{},
 		&models.Setting{},
-		&admin.MySeoSetting{},
+		&seo.MySeoSetting{},
 		&models.Article{},
 
 		&media_library.AssetManager{},
@@ -134,7 +134,7 @@ func createSetting() {
 }
 
 func createSeo() {
-	globalSeoSetting := admin.MySeoSetting{}
+	globalSeoSetting := seo.MySeoSetting{}
 	globalSetting := make(map[string]string)
 	globalSetting["SiteName"] = "Qor Demo"
 	globalSeoSetting.Setting = seo.Setting{GlobalSetting: globalSetting}
@@ -146,7 +146,7 @@ func createSeo() {
 		log.Fatalf("create seo (%v) failure, got err %v", globalSeoSetting, err)
 	}
 
-	defaultSeo := admin.MySeoSetting{}
+	defaultSeo := seo.MySeoSetting{}
 	defaultSeo.Setting = seo.Setting{Title: "{{SiteName}}", Description: "{{SiteName}} - Default Description", Keywords: "{{SiteName}} - Default Keywords", Type: "Default Page"}
 	defaultSeo.Name = "Default Page"
 	defaultSeo.LanguageCode = "en-US"
@@ -154,7 +154,7 @@ func createSeo() {
 		log.Fatalf("create seo (%v) failure, got err %v", defaultSeo, err)
 	}
 
-	productSeo := admin.MySeoSetting{}
+	productSeo := seo.MySeoSetting{}
 	productSeo.Setting = seo.Setting{Title: "{{SiteName}}", Description: "{{SiteName}} - {{Name}} - {{Code}}", Keywords: "{{SiteName}},{{Name}},{{Code}}", Type: "Product Page"}
 	productSeo.Name = "Product Page"
 	productSeo.LanguageCode = "en-US"
