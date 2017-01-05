@@ -33,6 +33,26 @@ $ go run db/seeds/main.go db/seeds/seeds.go
 $ go test $(go list ./... | grep -v /vendor/ | grep  -v /db/)
 ```
 
+### Compile golang templates to binary and run the application with the compiled templates.
+
+Compile the templates:
+```
+go run main.go --compile-qor-templates
+```
+
+Run with compiled templates:
+```
+go run -tags 'bindatafs' main.go
+```
+
+If need be, to run normally again simply:
+```
+go run main.go
+```
+
+If you still have doubts or questions please refere to the documentation on BindataFS:
+https://doc.getqor.com/plugins/bindata.html
+
 ## Admin Management Interface
 
 [Qor Example admin configuration](https://github.com/qor/qor-example/blob/master/config/admin/admin.go)
